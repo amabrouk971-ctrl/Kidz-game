@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "uid": { "type": "string", "description": "User Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Display name of user" },
+        "photoURL": { "type": "string", "description": "Avatar photo URL" },
+        "role": { "type": "string", "description": "User role: admin, parent, or user. Default is user or parent; amabrouk971@gmail.com is admin" },
+        "createdAt": { "type": "number", "description": "Account creation timestamp" },
+        "lastLoginAt": { "type": "number", "description": "Last sign in timestamp" },
+        "provider": { "type": "string", "description": "Authentication provider (google, password, etc.)" }
+      }
+    },
+    "SignInLog": {
+      "collection": "sign_ins",
+      "fields": {
+        "userId": { "type": "string", "description": "ID of user signing in" },
+        "email": { "type": "string", "description": "Email of user signing in" },
+        "displayName": { "type": "string", "description": "Name of user signing in" },
+        "role": { "type": "string", "description": "Role of user at sign in time" },
+        "timestamp": { "type": "number", "description": "Sign in timestamp" },
+        "userAgent": { "type": "string", "description": "Client browser user agent" }
+      }
+    },
+    "Player": {
+      "collection": "players",
+      "fields": {
+        "id": { "type": "string", "description": "Unique player ID" },
+        "ownerUid": { "type": "string", "description": "Auth UID of parent/owner" },
+        "name": { "type": "string", "description": "Child / player name" },
+        "gender": { "type": "string", "description": "boy | girl | prefer_not_to_say" },
+        "avatar": { "type": "string", "description": "Player avatar emoji or icon" },
+        "level": { "type": "number", "description": "Player level" },
+        "stars": { "type": "number", "description": "Total stars earned" },
+        "gems": { "type": "number", "description": "Total gems earned" },
+        "badges": { "type": "array", "description": "Badges earned by player" },
+        "completedLevels": { "type": "array", "description": "List of completed level/game IDs" },
+        "progress": { "type": "map", "description": "Progress scores per category" },
+        "inventory": { "type": "map", "description": "Items and gifts collected" },
+        "universeProgress": { "type": "map", "description": "Progress in encyclopedia universe" },
+        "discoveredUniverseItems": { "type": "array", "description": "Discovered items" },
+        "timePlayedSeconds": { "type": "number", "description": "Total playtime in seconds" },
+        "createdAt": { "type": "number", "description": "Creation timestamp" },
+        "updatedAt": { "type": "number", "description": "Last updated timestamp" }
+      }
+    },
+    "GameConfig": {
+      "collection": "game_configs",
+      "fields": {
+        "id": { "type": "string", "description": "Game identifier, e.g., swimming, quran" },
+        "title": { "type": "string", "description": "Display title of the game" },
+        "desc": { "type": "string", "description": "Game short description" },
+        "icon": { "type": "string", "description": "Emoji icon for the game" },
+        "color": { "type": "string", "description": "Color theme CSS class" },
+        "isEnabled": { "type": "boolean", "description": "Whether the game is visible to children" },
+        "difficulty": { "type": "string", "description": "easy, medium, hard" },
+        "rewardStars": { "type": "number", "description": "Stars awarded upon completing game challenge" },
+        "orderIndex": { "type": "number", "description": "Sort order in portal" },
+        "customQuestions": { "type": "array", "description": "Custom questions/challenges configured by admin" },
+        "updatedAt": { "type": "number", "description": "Last updated timestamp" }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "SmartTech Games",
+  "description": "منصة ألعاب تعليمية متكاملة للأطفال، العب، اتعلم، واكتشف مع سمارت تك.",
+  "requestFramePermissions": ["autoplay"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
